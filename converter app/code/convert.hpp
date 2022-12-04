@@ -7,7 +7,7 @@ class Convert
 private:
     string binary, hexadecimal, octal; //binary only used to convert decimal to binary
     unsigned long long decimal=0, bit=1, byte_sum=0;
-    int length;
+
 public:
     //converting functions
     string dec_to_bin(unsigned long long dec);  //decimal to binary
