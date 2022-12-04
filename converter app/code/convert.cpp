@@ -31,8 +31,7 @@ string Convert::dec_to_bin(unsigned long long dec)
 //----------------------------------------------------
 unsigned long long Convert::bin_to_dec(string bin)
 {
-    length = bin.length();
-    for (int i=length-1;i>=0;i--)
+    for (int i=bin.length()-1;i>=0;i--)
     {
         if (bin[i] == '1') 
             decimal += bit;
@@ -45,10 +44,8 @@ unsigned long long Convert::bin_to_dec(string bin)
 string Convert::hex_to_bin(string hex)
 {
     string hex_binary;
-    length = hex.length();
-    byte_sum = 0;
 
-    for(int i=length-1;i>=0;i--)
+    for(int i=hex.length()-1;i>=0;i--)
     {
         if (hex[i] >= 48 && hex[i] <= 57) //case for numbers 0-9 ascii
             byte_sum = (int)hex[i]-48; 
@@ -75,9 +72,8 @@ string Convert::hex_to_bin(string hex)
 string Convert::oct_to_bin(string oct)
 {
     string oct_binary;
-    length = oct.length();
 
-    for (int i=length-1;i>=0;i--)
+    for (int i=oct.length()-1;i>=0;i--)
     {
         byte_sum = (int)oct[i] - 48; //ascii code
         oct_binary = dec_to_bin(byte_sum) + oct_binary;
@@ -96,17 +92,14 @@ string Convert::oct_to_bin(string oct)
 //----------------------------------------------------
 string Convert::bin_to_hex(string bin)
 {
-    length = bin.length();
 
-    if (length % 4 != 0) //get missing 0's
+    if (bin.length() % 4 != 0) //get missing 0's
     {
         for (int j=0;j<(bin.length()%4);j++)
             bin = '0' + bin;
     }
 
-    length = bin.length(); //new length
-
-    for (int i=length-1;i>=0;i--)
+    for (int i=bin.length()-1;i>=0;i--)
     {
         if (bin[i]=='1') 
             byte_sum += bit;
@@ -125,17 +118,13 @@ string Convert::bin_to_hex(string bin)
 //----------------------------------------------------
 string Convert::bin_to_oct(string bin)
 {
-    length = bin.length();
-   
-    if (length % 3 != 0) //get missing 0's
+    if (bin.length() % 3 != 0) //get missing 0's
     {
         for (int j=0;j<(bin.length()%3);j++)
             bin = '0' + bin;
     }
 
-    length = bin.length(); //new length
-
-    for (int i=length-1;i>=0;i--)
+    for (int i=bin.length()-1;i>=0;i--)
     {
         if (bin[i] =='1') 
             byte_sum += bit;
