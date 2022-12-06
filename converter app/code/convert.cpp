@@ -8,7 +8,6 @@ void Convert::reset()
     binary = "";
     bit = 1;
 }
-
 //----------------------------------------------------
 string Convert::dec_to_bin(unsigned long long dec)
 {
@@ -43,8 +42,6 @@ unsigned long long Convert::bin_to_dec(string bin)
 //----------------------------------------------------
 string Convert::hex_to_bin(string hex)
 {
-    string hex_binary;
-
     for(int i=hex.length()-1;i>=0;i--)
     {
         if (hex[i] >= 48 && hex[i] <= 57) //case for numbers 0-9 ascii
@@ -65,14 +62,11 @@ string Convert::hex_to_bin(string hex)
         reset(); //reset values
                               
     }
-
     return hex_binary;
 }
 //----------------------------------------------------
 string Convert::oct_to_bin(string oct)
 {
-    string oct_binary;
-
     for (int i=oct.length()-1;i>=0;i--)
     {
         byte_sum = (int)oct[i] - 48; //ascii code
@@ -86,7 +80,6 @@ string Convert::oct_to_bin(string oct)
         
         reset();
     }
-
     return oct_binary;
 }
 //----------------------------------------------------
@@ -135,6 +128,5 @@ string Convert::bin_to_oct(string bin)
             reset();
         }
     }
-
     return octal;
 }
