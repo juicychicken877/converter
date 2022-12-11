@@ -3,7 +3,6 @@ using namespace std;
 
 class Convert 
 {
-
     string binary, hexadecimal, octal;
     string hex_binary, oct_binary;
     unsigned long long decimal=0, bit=1, byte_sum=0;
