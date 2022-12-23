@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "convert.hpp"
 using namespace std;
 
@@ -7,6 +8,16 @@ void Convert::reset()
     byte_sum = 0;
     binary = "";
     bit = 1;
+}
+//---------------------------------------------------
+string Convert::zeros_reduce(string word) //reduce 0's in front of a string
+{
+    int i;
+    while (word[i]=='0')
+    {
+        if (word[i]=='0') word.erase(i, 1);
+    }
+    return word;
 }
 //----------------------------------------------------
 string Convert::dec_to_bin(unsigned long long dec)
@@ -62,6 +73,7 @@ string Convert::hex_to_bin(string hex)
         reset(); //reset values
                               
     }
+    hex_binary = zeros_reduce(hex_binary);
     return hex_binary;
 }
 //----------------------------------------------------
@@ -80,6 +92,7 @@ string Convert::oct_to_bin(string oct)
         
         reset();
     }
+    oct_binary = zeros_reduce(oct_binary);
     return oct_binary;
 }
 //----------------------------------------------------
@@ -106,6 +119,7 @@ string Convert::bin_to_hex(string bin)
             reset();
         }
     }
+    hexadecimal = zeros_reduce(hexadecimal);
     return hexadecimal;
 }
 //----------------------------------------------------
@@ -128,5 +142,6 @@ string Convert::bin_to_oct(string bin)
             reset();
         }
     }
+    octal = zeros_reduce(octal);
     return octal;
 }
