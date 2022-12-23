@@ -3,7 +3,8 @@ using namespace std;
 
 class Convert 
 {
-    string binary, hexadecimal, octal;
+private:
+    string binary, hexadecimal, octal; //binary variable only used to convert decimal to binary
     string hex_binary, oct_binary;
     unsigned long long decimal=0, bit=1, byte_sum=0;
 
@@ -16,5 +17,5 @@ public:
     string bin_to_hex(string bin);          //binary to hexadecimal
     string bin_to_oct(string bin);         //binary to octal
     void reset();
-
+    string zeros_reduce(string word);
 };
